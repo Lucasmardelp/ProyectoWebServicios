@@ -1,0 +1,40 @@
+.cuerpo {
+     background: linear-gradient(150deg, #13527c, #c9d4ce);
+    height: 1100px;
+    text-align: center;
+}
+.form-group my-3{
+    align-items: flex-end;
+}
+
+.container {
+    text-align: center;
+}
+
+.center-form {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.col{
+    height: 100px;
+   
+}
+
+.card-title{
+    color: black;
+}
+
+.formulario h1{
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.containerFooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}

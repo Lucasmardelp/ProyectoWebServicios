@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace="/fragments/head :: head">
+
+    <body>
+        <div th:replace="/fragments/navbar_all :: div"></div>
+    <br>
+    <div th:replace="/fragments/error :: div"></div>
+    <div class="fondo">
+         <header class="head">
+             
+                <!-- <br><br>-->
+                <div class="cardsSub">
+                    <span class="cards" th:if="${session.usuariosession == null}">
+                        <div th:replace="/fragments/prov_cards :: div"></div>
+                    </span>
+                    <span th:if="${session.usuariosession != null}">
+                        <div class="imagen">
+                    <img th:if="${session.usuariosession.imagen != null}"  th:src="@{/imagen/perfilUsuario/__${session.usuariosession.id}__}" >
+                </div>
+                    </span>
+                    <div class="subtitulo">
+                           <h1 class="titulo">Web Services</h1>
+                        <span>
+                            <p th:if="${session.usuariosession != null}">
+                                Te damos la bienvenida
+                                <span th:text="${session.usuariosession.nombre}" class="user-name-style"></span>
+                            </p>
+                        </span>
+                       <span th:if="${session.usuariosession == null}">Te damos la bienvenida </span>
+                        </span>
+                        a la plataforma
+                        <br>de servicios de <strong class="parrafo">CHACRAS DE CORIA</strong>
+                    </div>
+                </div>
+
+            </header>
+
+        <!--Estan los servicios en forma de cards-->
+
+        </span>
+        <br><br><br>
+    </div>
+    <br>
+        
+        
+        
+        <footer th:replace="/fragments/footer :: footer"></footer>
+        <div th:replace="/fragments/script :: div"></div>
+    </body>
+</html>

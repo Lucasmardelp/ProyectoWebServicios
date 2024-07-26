@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.AplicacionServicios.ServiciosApp.servicios">
+  <ClassDiagramComponents>
+    <Class name="ContratoArchivadoServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="47.0" yPosition="165.0">
+      <Fields>
+        <Field name="contratoRepositorio" type="ContratoRepositorio" visibility="private"/>
+        <Field name="contratoArchivadoRepositorio" type="ContratoArchivadoRepositorio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearContratoArchivado" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="listarContratosArchivados" returnType="List&lt;ContratoArchivado&gt;" visibility="public"/>
+        <Method name="eliminarContratoArchivado" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ContratoServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="1687.0" yPosition="561.0">
+      <Fields>
+        <Field name="proveedorServicio" type="ProveedorServicio" visibility="private"/>
+        <Field name="proveedorRepositorio" type="ProveedorRepositorio" visibility="private"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="private"/>
+        <Field name="imagenServicio" type="ImagenServicio" visibility="private"/>
+        <Field name="contratoRepositorio" type="ContratoRepositorio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearContrato" returnType="void" visibility="public">
+          <Argument type="String" name="requisitos"/>
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="Proveedor" name="proveedor"/>
+        </Method>
+        <Method name="envioDeProveedorACliente" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="horasAprox"/>
+          <Argument type="Date" name="inicioDelTrabajo"/>
+        </Method>
+        <Method name="aceptarContrato" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="boolean" name="confirmacion"/>
+        </Method>
+        <Method name="listarContratos" returnType="List&lt;Contrato&gt;" visibility="public">
+          <Argument type="Proveedor" name="id"/>
+        </Method>
+        <Method name="cancelarContrato" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="finalizarContrato" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="listaContratoProveedor" returnType="List&lt;Contrato&gt;" visibility="public">
+          <Argument type="String" name="idProveedor"/>
+        </Method>
+        <Method name="listaContratoUsuario" returnType="List&lt;Contrato&gt;" visibility="public">
+          <Argument type="String" name="idUsuario"/>
+        </Method>
+        <Method name="getOne" returnType="Contrato" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="listarPorPrecioNull" returnType="List&lt;Contrato&gt;" visibility="public">
+          <Argument type="String" name="idProveedor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagenServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="1135.0" yPosition="605.0">
+      <Fields>
+        <Field name="imagenRepositorio" type="ImagenRepositorio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="guardar" returnType="Imagen" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="rol"/>
+        </Method>
+        <Method name="actualizar" returnType="Imagen" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProveedorServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="493.0" yPosition="23.0">
+      <Fields>
+        <Field name="proveedorRepositorio" type="ProveedorRepositorio" visibility="private"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="private"/>
+        <Field name="contratoRepositorio" type="ContratoRepositorio" visibility="private"/>
+        <Field name="reseniaRepositorio" type="ReseniaRepositorio" visibility="private"/>
+        <Field name="contratoArchivadoServicio" type="ContratoArchivadoServicio" visibility="private"/>
+        <Field name="usuarioServicio" type="UsuarioServicio" visibility="private"/>
+        <Field name="imagenServicio" type="ImagenServicio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearProveedor" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Profesion" name="profesion1"/>
+          <Argument type="ProfesionExtra" name="profesion2"/>
+          <Argument type="Long" name="telefono"/>
+          <Argument type="String" name="presentacion"/>
+          <Argument type="Sexo" name="sexo"/>
+        </Method>
+        <Method name="validarCrearProveedor" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="telefono"/>
+          <Argument type="String" name="presentacion"/>
+        </Method>
+        <Method name="actualizarProovedor" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="idProveedor"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Profesion" name="profesion"/>
+          <Argument type="ProfesionExtra" name="profesion2"/>
+          <Argument type="Long" name="telefono"/>
+          <Argument type="String" name="presentacion"/>
+          <Argument type="Sexo" name="sexo"/>
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="validarActualizarProveedor" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Profesion" name="profesion"/>
+          <Argument type="ProfesionExtra" name="profesion2"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="telefono"/>
+        </Method>
+        <Method name="listarProveedores" returnType="List&lt;Proveedor&gt;" visibility="public">
+          <Argument type="String" name="profesion"/>
+        </Method>
+        <Method name="borrarProovedorPorId" returnType="void" visibility="public">
+          <Argument type="String" name="idProveedor"/>
+        </Method>
+        <Method name="buscarPorProfesion" returnType="List&lt;Proveedor&gt;" visibility="public">
+          <Argument type="String" name="profesion1"/>
+        </Method>
+        <Method name="proveedorACliente" returnType="void" visibility="public">
+          <Argument type="String" name="idProveedor"/>
+        </Method>
+        <Method name="buscarPorNombre" returnType="List&lt;Proveedor&gt;" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="buscarProveedorPorTelefono" returnType="Proveedor" visibility="public">
+          <Argument type="Long" name="telefono"/>
+        </Method>
+        <Method name="getOne" returnType="Proveedor" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="sumarContacto" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="calcularPromedio" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ReseniaServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="988.0" yPosition="958.0">
+      <Fields>
+        <Field name="reseniaRepositorio" type="ReseniaRepositorio" visibility="private"/>
+        <Field name="contratoRepositorio" type="ContratoRepositorio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearResenia" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="Proveedor" name="proveedor"/>
+          <Argument type="String" name="cuerpo"/>
+          <Argument type="Integer" name="calificacion"/>
+        </Method>
+        <Method name="listarResenias" returnType="List&lt;Resenia&gt;" visibility="public"/>
+        <Method name="actualizarResenia" returnType="void" visibility="public">
+          <Argument type="String" name="idResenia"/>
+          <Argument type="String" name="cuerpo"/>
+          <Argument type="Integer" name="calificacion"/>
+          <Argument type="Usuario" name="idUsuario"/>
+          <Argument type="Proveedor" name="idProveedor"/>
+        </Method>
+        <Method name="borrarReseniaPorID" returnType="void" visibility="public">
+          <Argument type="String" name="idResenia"/>
+        </Method>
+        <Method name="validar" returnType="void" visibility="public">
+          <Argument type="String" name="cuerpo"/>
+          <Argument type="Integer" name="calificacion"/>
+        </Method>
+        <Method name="buscarPorProveedorId" returnType="List&lt;Resenia&gt;" visibility="public">
+          <Argument type="String" name="idProveedor"/>
+        </Method>
+        <Method name="cambiarEstadoDeTieneResenia" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UsuarioServicio" package="AplicacionServicios.ServiciosApp.servicios" visibility="public" xPosition="70.0" yPosition="662.0">
+      <Fields>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="private"/>
+        <Field name="proveedorRepositorio" type="ProveedorRepositorio" visibility="private"/>
+        <Field name="imagenServicio" type="ImagenServicio" visibility="private"/>
+        <Field name="contratoRepositorio" type="ContratoRepositorio" visibility="private"/>
+        <Field name="contratoArchivadoRepositorio" type="ContratoArchivadoRepositorio" visibility="private"/>
+        <Field name="contratoArchivadoServicio" type="ContratoArchivadoServicio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearUsuario" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Sexo" name="sexo"/>
+        </Method>
+        <Method name="validarCrearUsuario" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+        </Method>
+        <Method name="buscarPorEmail" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="actualizarUsuario" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="idUsuario"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Sexo" name="sexo"/>
+        </Method>
+        <Method name="validarActualizarUsuario" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+        </Method>
+        <Method name="listarUsuario" returnType="List&lt;Usuario&gt;" visibility="public"/>
+        <Method name="borrarUsuarioPorID" returnType="void" visibility="public">
+          <Argument type="String" name="idUsuario"/>
+        </Method>
+        <Method name="clienteAProveedor" returnType="void" visibility="public">
+          <Argument type="String" name="idUsuario"/>
+          <Argument type="String" name="profesion"/>
+          <Argument type="String" name="profesion2"/>
+          <Argument type="Long" name="telefono"/>
+          <Argument type="Sexo" name="sexo"/>
+        </Method>
+        <Method name="validarClienteAProveedor" returnType="void" visibility="public">
+          <Argument type="Long" name="telefono"/>
+          <Argument type="String" name="profesion"/>
+          <Argument type="String" name="profesion2"/>
+        </Method>
+        <Method name="loadUserByUsername" returnType="UserDetails" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getOne" returnType="Usuario" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="invernarCuenta" returnType="Usuario" visibility="public">
+          <Argument type="String" name="idUsuario"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="contratoArchivadoServicio" source="AplicacionServicios.ServiciosApp.servicios.UsuarioServicio" target="AplicacionServicios.ServiciosApp.servicios.ContratoArchivadoServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="proveedorServicio" source="AplicacionServicios.ServiciosApp.servicios.ContratoServicio" target="AplicacionServicios.ServiciosApp.servicios.ProveedorServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenServicio" source="AplicacionServicios.ServiciosApp.servicios.ContratoServicio" target="AplicacionServicios.ServiciosApp.servicios.ImagenServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contratoArchivadoServicio" source="AplicacionServicios.ServiciosApp.servicios.ProveedorServicio" target="AplicacionServicios.ServiciosApp.servicios.ContratoArchivadoServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarioServicio" source="AplicacionServicios.ServiciosApp.servicios.ProveedorServicio" target="AplicacionServicios.ServiciosApp.servicios.UsuarioServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenServicio" source="AplicacionServicios.ServiciosApp.servicios.UsuarioServicio" target="AplicacionServicios.ServiciosApp.servicios.ImagenServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenServicio" source="AplicacionServicios.ServiciosApp.servicios.ProveedorServicio" target="AplicacionServicios.ServiciosApp.servicios.ImagenServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
